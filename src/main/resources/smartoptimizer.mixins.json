@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.smartoptimizer.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "client": [
+    "RubidiumFluidRendererFix"
+  ],
+  "mixins": [],
+  "injectors": {
+    "defaultRequire": 0
+  },
+  "plugin": "com.smartoptimizer.mixin.SmartOptimizerMixinPlugin"
+}

@@ -1,0 +1,37 @@
+# Build output
+build/
+out/
+
+# Gradle cache
+.gradle/
+
+# IDE
+.idea/
+.eclipse/
+*.iml
+*.ipr
+*.iws
+.classpath
+.project
+.settings/
+.vscode/
+bin/
+
+# Run directories
+run/
+runs/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# Dev / AI artifacts
+AI_CONTEXT.txt
+*.ps1
+*translations*.json
+MODRINTH_DESCRIPTION.md
+RELEASE_INFO.md

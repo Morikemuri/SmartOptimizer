@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "issues": [
+    {
+      "id": "amd_c2_jit_crash",
+      "description": "AMD Ryzen + Java 17 + Embeddium: JIT compiler crash (C2)",
+      "cpuVendorContains": "AMD",
+      "javaVersionMin": 17,
+      "javaVersionMax": 17,
+      "modsAny": ["embeddium", "rubidium"],
+      "crashSignatures": ["C2 CompilerThread", "EXCEPTION_ACCESS_VIOLATION", "ClonedChunkSectionCache"],
+      "proactiveCheck": true,
+      "fixArgs": "-XX:TieredStopAtLevel=3",
+      "severity": "fatal"
+    },
+    {
+      "id": "gc_oom",
+      "description": "JVM ran out of memory (GC overhead exceeded)",
+      "cpuVendorContains": null,
+      "javaVersionMin": null,
+      "javaVersionMax": null,
+      "modsAny": [],
+      "crashSignatures": ["GC overhead limit exceeded", "java.lang.OutOfMemoryError"],
+      "proactiveCheck": false,
+      "fixArgs": "-XX:+UseZGC -XX:+UnlockExperimentalVMOptions",
+      "severity": "fatal"
+    },
+    {
+      "id": "access_violation_generic",
+      "description": "JVM crash: access violation in native frame (driver/OpenGL issue)",
+      "cpuVendorContains": null,
+      "javaVersionMin": null,
+      "javaVersionMax": null,
+      "modsAny": [],
+      "crashSignatures": ["EXCEPTION_ACCESS_VIOLATION", "C  [ig"],
+      "proactiveCheck": false,
+      "fixArgs": "-Djava.awt.headless=true -XX:-UseNUMA",
+      "severity": "warn"
+    },
+    {
+      "id": "amd_java_21_numa",
+      "description": "AMD Ryzen 9000 + Java 21: NUMA optimization available",
+      "cpuVendorContains": "AMD",
+      "javaVersionMin": 21,
+      "javaVersionMax": null,
+      "modsAny": [],
+      "crashSignatures": [],
+      "proactiveCheck": true,
+      "fixArgs": "-XX:+UseZGC -XX:+UnlockExperimentalVMOptions -XX:+UseNUMA -XX:+AlwaysPreTouch",
+      "severity": "info"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="All Rights Reserved"
+
+[[mods]]
+    modId="smartoptimizer"
+    version="${file.jarVersion}"
+    displayName="SmartOptimizer"
+    authors="RuleCore, Morikemuri"
+    description='''
+        Automatically detects your hardware and installed mods,
+        then applies the optimal performance configuration preset.
+        All rights reserved. Do not modify or redistribute without permission.
+    '''
+
+[[dependencies.smartoptimizer]]
+    modId="forge"
+    mandatory=true
+    versionRange="[47,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.smartoptimizer]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.20.1,1.21)"
+    ordering="NONE"
+    side="BOTH"
+
+[[mixins]]
+    config="smartoptimizer.mixins.json"

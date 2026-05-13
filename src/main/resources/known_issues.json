@@ -1,0 +1,80 @@
+﻿{
+  "version": 2,
+  "issues": [
+    {
+      "id": "rubidium_lava_crash",
+      "type": "single_mod",
+      "modId": "rubidium",
+      "affectedVersionPrefixes": ["0.6.", "0.7.1"],
+      "severity": "severe",
+      "description": "NPE in FluidRenderer.render() on flowing lava",
+      "actions": ["warnOnly"],
+      "recommendation": "Replace with Embeddium 0.3.9+ (CurseForge/Modrinth)"
+    },
+    {
+      "id": "embeddium_amd_crash",
+      "type": "single_mod",
+      "modId": "embeddium",
+      "affectedVersionPrefixes": ["0.1.", "0.2."],
+      "severity": "warn",
+      "description": "Chunk mesh NPE on AMD GPUs during world load",
+      "actions": ["forceSafeMode"],
+      "recommendation": "Update to Embeddium 0.3.9+ (CurseForge/Modrinth)"
+    },
+    {
+      "id": "optifine_rubidium_conflict",
+      "type": "mod_combo",
+      "modIds": ["optifine", "rubidium"],
+      "severity": "fatal",
+      "description": "Both mods replace the same rendering pipeline - crash on launch",
+      "actions": ["forceSafeMode", "disableMixin:RubidiumFluidRendererFix"],
+      "recommendation": "Remove OptiFine; use Embeddium 0.3.9+ + Oculus 1.7+"
+    },
+    {
+      "id": "optifine_embeddium_conflict",
+      "type": "mod_combo",
+      "modIds": ["optifine", "embeddium"],
+      "severity": "fatal",
+      "description": "Both mods replace the same rendering pipeline - crash on launch",
+      "actions": ["forceSafeMode"],
+      "recommendation": "Remove OptiFine; use Embeddium 0.3.9+ + Oculus 1.7+"
+    },
+    {
+      "id": "oculus_iris_conflict",
+      "type": "mod_combo",
+      "modIds": ["oculus", "iris"],
+      "severity": "warn",
+      "description": "Two shader mods loaded simultaneously - rendering artifacts likely",
+      "actions": ["warnOnly"],
+      "recommendation": "Remove Iris; use Oculus for Forge shaders"
+    },
+    {
+      "id": "iris_without_sodium",
+      "type": "single_mod",
+      "modId": "iris",
+      "requiresAbsent": "sodium",
+      "severity": "warn",
+      "description": "Iris requires Sodium (Fabric-only). Will not function on Forge",
+      "actions": ["warnOnly"],
+      "recommendation": "Use Oculus (Forge port of Iris) instead"
+    },
+    {
+      "id": "phosphor_starlight_conflict",
+      "type": "mod_combo",
+      "modIds": ["phosphor", "starlight"],
+      "severity": "severe",
+      "description": "Phosphor and Starlight both replace the lighting engine",
+      "actions": ["setOption:renderDistance=8", "warnOnly"],
+      "recommendation": "Remove Phosphor; Starlight is faster and more compatible"
+    },
+    {
+      "id": "optifine_forge_incompatible",
+      "type": "single_mod",
+      "modId": "optifine",
+      "severity": "info",
+      "description": "OptiFine on Forge causes frequent crashes with many performance mods",
+      "actions": ["warnOnly"],
+      "recommendation": "Replace OptiFine with Embeddium 0.3.9+ + Oculus 1.7+"
+    }
+  ]
+}
