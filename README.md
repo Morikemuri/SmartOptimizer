@@ -41,7 +41,7 @@ At startup, SmartOptimizer reads your available RAM, CPU core count, and GPU inf
 Continuously monitors and adjusts settings every game tick:
 - **Focus loss** - after 350 ms debounce, reduces render to 2, simulation to 2, particles to Minimal, FPS cap to 30
 - **Focus gain** - instantly restores previous values
-- **FPS-based auto-tuning** - reduces settings on sustained low FPS (<20), restores on high FPS (>50)
+- **FPS-based auto-tuning** - reduces settings on sustained low FPS (<30), restores on high FPS (>50)
 - **User override detection** - if you manually change a setting, SmartOptimizer stops touching it
 
 ### Optimize My Modpack Screen
@@ -87,7 +87,7 @@ On the very first boot, a preference selector walks you through basic options be
 
 1. Make sure you have **Minecraft Forge 1.20.1** (version 47.x) installed.
 2. Make sure you are running **Java 17**.
-3. Download `SmartOptimizer-1.0.0.jar` from the [Releases](../../releases) page.
+3. Download `SmartOptimizer-1.0.0.jar` from https://www.curseforge.com/minecraft/mc-mods/smartoptimizer
 4. Place the JAR in your `mods` folder (`.minecraft/mods/`).
 5. Launch the game. SmartOptimizer runs automatically on startup.
 
